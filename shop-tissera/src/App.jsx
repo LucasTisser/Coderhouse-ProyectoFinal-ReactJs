@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
+
+// import Button from './components/Button/Index'; 
+
+// import Box from './components/Box'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
+
   return (
     <div className="App">
       <NavBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <ItemListContainer greeting='Esto es un box que incluira mi catalogo' />
+
+      {/* <Button  texto='Boton1' color='red' />
+      <Button  texto='Boton2' color='blue' />
+      <Button  texto='Boton3' color='yellow' />
+      <Button  texto='Boton4' color='brown'>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Esto es el children del boton 4
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </Button>
+      <Button  color='gold'>
+        <p>
+          Esto es un children
+        </p>
+      </Button>
+      <Box titulo='Caja contenedora'/> */}
     </div>
   );
 }

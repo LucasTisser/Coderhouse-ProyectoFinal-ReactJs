@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(1, 191, 67);
+}
+
+.nav a {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav a:hover {
+    color:black
+}
+
+.navList {
+    list-style-type: none;
+    color: white;
+}
+
+.logo {
+    
+    padding-top: 10px;
+}
