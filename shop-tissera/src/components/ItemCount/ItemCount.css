@@ -1,0 +1,44 @@
+.itemCount {
+    background-color:#deb887;
+    border-radius: 20px;
+    border-color: grey;
+    border-style: solid;
+    display: grid;
+    grid-template-areas: 
+    "btnLess counter btnMore"
+    "btnAdd btnAdd btnAdd"
+}
+
+.btnLess {
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+    margin-left: 20px;
+    background-color: #683b00;
+    grid-area: btnLess;
+    color:white;
+    border-radius: 50%;
+}
+.btnMore {
+    background-color:#683b00;
+    grid-area: btnMore ;
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+    margin-left: 20px;
+    color:white;
+    border-radius: 50%;
+}
+.counter {
+    margin-left: 25px;
+    text-align: center;
+    width: 40px;
+    grid-area: counter;
+}
+.btnAdd {
+    grid-area: btnAdd;
+    width: 120px;
+    margin-left: 40px;
+    background-color:#683b00;
+    color:white;
+}
