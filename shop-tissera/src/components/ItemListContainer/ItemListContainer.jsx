@@ -1,19 +1,15 @@
 import React from 'react'
 import './ItemListContainer.css';
-import Contador from '../ItemCount/ItemCount';
+import { ItemList } from '../ItemList/ItemList';
+
 
 const ItemListContainer = props => {
 
   return (
     <div className='listContainer'>
         {props.greeting}
-        
 
-        <div className='itemCard'>
-          <h1>Caramelos</h1>
-          <Contador stock={5} initial={1}/>
-        </div>
-        
+        <ItemList/>
     </div>
   )
 }
