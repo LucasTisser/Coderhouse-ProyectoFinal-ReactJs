@@ -2,12 +2,3 @@
     height: 500px;
     background-color: rgba(0, 255, 34, 0.431);
 }
-
-.itemCard{
-    margin-left: 15px;
-    height: 300px;
-    width: 200px;
-    background-color:antiquewhite;
-    border-radius: 20px;
-    box-shadow: grey 2px 2px 5px 2px;
-}
