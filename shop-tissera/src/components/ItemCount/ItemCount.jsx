@@ -38,3 +38,5 @@ export default function Contador({stock, initial, onAdd}) {
     </div>
     );
 }
+
+

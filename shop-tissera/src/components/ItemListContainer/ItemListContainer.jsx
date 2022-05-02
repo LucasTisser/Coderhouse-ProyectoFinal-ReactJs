@@ -4,7 +4,7 @@ import { ItemList } from '../ItemList/ItemList';
 
 
 function traerProductos() {
-  const promesaProductos = new Promise( (resolve, reject) =>{
+  const promesaProductos = new Promise( (resolve) =>{
       const dataProductos = [
   {
   id: 1,
@@ -40,6 +40,7 @@ function traerProductos() {
 const ItemListContainer = (props) => {
 
   const [items, setItem] = useState([])
+
   useEffect( () => {
     traerProductos()
     .then( (res) => { setItem(res) } )
@@ -49,7 +50,11 @@ const ItemListContainer = (props) => {
     <div className='listContainer'>
         {props.greeting}
 
-        <ItemList items={items}/>
+          <div className='itemscontainer'>
+            <ItemList items={items}/>
+            <ItemList items={items}/>
+          </div>
+        
     </div>
   )
 }

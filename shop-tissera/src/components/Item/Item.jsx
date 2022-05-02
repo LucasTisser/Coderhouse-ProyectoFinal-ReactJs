@@ -8,10 +8,10 @@ export const Item = ({id, producto, precio, img}) => {
                     <div className='itemcountain'>
                         <div id={id} className='itemCard'>
                             <img src="{}" alt="" />
-                            <h2>{producto}</h2>
+                            <h2 className='tituloCard'>{producto}</h2>
                             <p>{precio}</p>
                             <Contador stock={15} initial={0}/>
-                    </div>
+                        </div>
                     </div>
                     )
             }
