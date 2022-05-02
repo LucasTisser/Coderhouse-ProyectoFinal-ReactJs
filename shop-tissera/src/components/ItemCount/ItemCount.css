@@ -9,7 +9,8 @@
     "btnAdd btnAdd btnAdd";
 }
 
-.btnLess, .btnMore {
+.btnLess,
+.btnMore {
   height: 30px;
   width: 30px;
   margin-top: 15px;

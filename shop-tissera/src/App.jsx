@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+// import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 // import Button from './components/Button/Index';
 import React from "react";
 
@@ -28,12 +29,12 @@ export default function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Esto es un box que incluira mi catalogo" />
+      <ItemDetailContainer />
+      {/* <ItemListContainer/> */}
       <SuperForm title="Hey!" boton={SuperButton} />
     </div>
   );
 }
-
 
 // --- Ejemplo ---
 
@@ -56,9 +57,9 @@ export default function App() {
 //   return (
 //     <div>
 //       <ul>
-        
+
 //         {pokemons.map(pok => <li>{pok.name}</li>)}
-        
+
 //       </ul>
 //     </div>
 //   );

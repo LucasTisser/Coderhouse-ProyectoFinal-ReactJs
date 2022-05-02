@@ -1,0 +1,4 @@
+.detailContainerCards {
+  display: flex;
+  justify-content: space-evenly;
+}
