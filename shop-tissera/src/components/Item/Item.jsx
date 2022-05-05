@@ -4,7 +4,7 @@ import "./Item.css";
 
 export const Item = ({ id, producto, precio, img }) => {
   return (
-    <div className="itemcountain">
+    <div className="itemCountain">
       <div id={id} className="itemCard">
         <img src="{}" alt="" />
         <h2 className="tituloCard">{producto}</h2>
