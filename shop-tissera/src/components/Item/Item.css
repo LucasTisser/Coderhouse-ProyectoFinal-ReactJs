@@ -1,18 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-.itemCard {
-  height: 300px;
-  width: 200px;
-  background-color: antiquewhite;
-  border-radius: 20px;
-  box-shadow: grey 2px 2px 5px 2px;
-}
 .itemCountain {
-  height: 400px;
   width: 100%;
   margin: 5%;
+}
+.itemCard {
+  height: 75%;
+  width: 120%;
+  background-color: #ffdddd;
+  border-radius: 20px;
+}
+.imgCard {
+  height: 45%;
+  width: 100%;
 }
 
 .tituloCard {
   font-family: "Bebas Neue", cursive;
+}
+.btnDetail {
+  width: 100%;
+  background-color: #680000;
+  color: white;
+  border-radius: 15px 15px 0px 0px;
 }

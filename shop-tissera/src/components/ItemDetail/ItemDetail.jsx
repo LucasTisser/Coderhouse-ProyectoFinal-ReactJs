@@ -1,17 +1,20 @@
 import React from "react";
 import "./ItemDetail.css";
 
-export const ItemDetail = ({ id, producto, descripcion, precio, img }) => {
+function ItemDetail({ items }) {
+  console.log(items);
   return (
-    <div id={id} className="ItemDetailCard">
-      <div className="imgDetailCard">
-        <img src="" alt="" />
-      </div>
+    <div id={items?.id} className="ItemDetailCard">
+      <div className="imgDetailCard"></div>
       <div className="txtDetailCard">
-        <h2>{producto}</h2>
-        <p>{descripcion}</p>
-        <p>{precio}</p>
+        <h2>{items?.producto}</h2>
+        <img src={items?.img} alt="" />
+        <p>{items?.descripcion}</p>
+        <p>{items?.precio}</p>
+        <button className="btnBuy">Comprar</button>
       </div>
     </div>
   );
-};
+}
+
+export default ItemDetail;

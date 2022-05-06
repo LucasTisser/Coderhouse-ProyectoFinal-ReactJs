@@ -1,42 +1,17 @@
 import NavBar from "./components/NavBar/NavBar";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-// import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-// import Button from './components/Button/Index';
-import React from "react";
-import './app.css'
-
-
-import {Routes, Route, NavLink} from 'react-router-dom';
-import Home from "./pages/Home/Home";
-import Detalle from "./pages/Detalle/Detalle";
-import Catalogo from "./pages/Catalogo/Catalogo";
-import DetalleItem from "./pages/Detalle-item/DetalleItem";
+import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./pages/ItemDetailContainer/ItemDetailContainer";
+import "./app.css";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
     <div className="App">
-      {/* <NavBar />
-      <ItemDetailContainer />
-      <ItemListContainer/>
-      */}
-
-      <ul>
-        <li><NavLink to={'/'} className={(nav) => nav.isActive ? 'link-active' : ''}>Home</NavLink></li>
-
-        <li><NavLink to={'/Catalogo'} className={(nav) => nav.isActive ? 'link-active' : ''}>Catalogo</NavLink></li>
-
-        <li><NavLink to={'/Detalle'} className={(nav) => nav.isActive ? 'link-active' : ''}>Detalle</NavLink></li>
-
-        <li><NavLink to={'/Detalle/supermas'} className={(nav) => nav.isActive ? 'link-active' : ''}>Detalle de superman</NavLink></li>
-      </ul>
-
-
+      <NavBar />
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/Detalle' element={<Detalle/>}/>
-        <Route path='/Catalogo/*' element={<Catalogo/>}/>
-        <Route path='/Detalle/:id' element={<DetalleItem/>}/>
-
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
     </div>
   );
@@ -72,25 +47,25 @@ export default function App() {
 // }
 
 // function SuperButton({ buttonText }) {
-  // function doSomething() {
-    // console.log("Hello Coders");
-  // }
-  // return (
-    // <button type="button" onClick={doSomething}>
-      // {" "}
-      // {buttonText}{" "}
-    // </button>
-  // );
+// function doSomething() {
+// console.log("Hello Coders");
+// }
+// return (
+// <button type="button" onClick={doSomething}>
+// {" "}
+// {buttonText}{" "}
+// </button>
+// );
 // }
 // function SuperForm(props) {
-  // console.log(props);
-  // return (
-    // <>
-      // {/* <h1>{props.title}</h1> */}
-      // {/* {props.boton({ buttonText: "SuperForm button" })} */}
-    // {/* </> */}
-  // );
+// console.log(props);
+// return (
+// <>
+// {/* <h1>{props.title}</h1> */}
+// {/* {props.boton({ buttonText: "SuperForm button" })} */}
+// {/* </> */}
+// );
 // }
-{/* <SuperForm title="Hey!" boton={SuperButton} /> */}
-
+// {/* <SuperForm title="Hey!" boton={SuperButton} /> */}
+// import Button from './components/Button/Index';
 // --- Ejemplo --

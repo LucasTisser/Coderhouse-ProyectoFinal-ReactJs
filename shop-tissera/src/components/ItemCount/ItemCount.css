@@ -1,8 +1,6 @@
 .itemCount {
-  background-color: #deb887;
-  border-radius: 20px;
-  border-color: grey;
-  border-style: solid;
+  border-radius: 0px 0px 15px 15px;
+  background-color: #de8787;
   display: grid;
   grid-template-areas:
     "btnLess counter btnMore"
@@ -15,7 +13,7 @@
   width: 30px;
   margin-top: 15px;
   margin-left: 20px;
-  background-color: #683b00;
+  background-color: #680000;
   color: white;
   border-radius: 50%;
 }
@@ -35,8 +33,8 @@
 
 .btnAdd {
   grid-area: btnAdd;
-  width: 120px;
-  margin-left: 40px;
-  background-color: #683b00;
+  width: auto;
+  background-color: #680000;
   color: white;
+  border-radius: 0px 0px 15px 15px;
 }

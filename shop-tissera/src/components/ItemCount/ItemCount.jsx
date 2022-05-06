@@ -36,7 +36,7 @@ export default function Contador({ stock, initial, onAdd }) {
           count <= stock && onAdd();
         }}
       >
-        Agregar al carrito{" "}
+        Agregar al Carrito{" "}
       </button>
     </div>
   );

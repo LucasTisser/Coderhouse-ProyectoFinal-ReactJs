@@ -1,25 +1,44 @@
 .nav {
   display: flex;
-  justify-content: space-evenly;
-  background-color: rgb(1, 191, 67);
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgba(205, 16, 19, 0.886);
+  width: 100%;
 }
-
 .nav a {
-  padding-left: 30px;
-  padding-right: 30px;
   text-decoration: none;
   color: white;
 }
-
 .nav a:hover {
   color: black;
 }
-
-.navList {
-  list-style-type: none;
-  color: white;
+.logoContainer {
+  height: auto;
+  width: 10%;
+}
+.logoImg {
+  margin: 16px;
+  height: 75%;
+  width: 75%;
+}
+.navLinks {
+  width: 60%;
+  display: flex;
+  justify-content: center;
 }
 
-.logo {
-  padding-top: 10px;
+.cartWidget {
+  width: 20%;
+  padding-top: 2%;
+  text-align: center;
+}
+.navList {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.navList li {
+  margin-top: 4%;
+  font-size: 200%;
 }
