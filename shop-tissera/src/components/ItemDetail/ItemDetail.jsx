@@ -18,17 +18,13 @@ function ItemDetail({ items }) {
         <img src={items?.img} alt="" />
         <p>{items?.descripcion}</p>
         <p>{items?.precio}</p>
-        <div>
-          <Contador
-            onAdd={onAdd}
-            count={count}
-            stock={items?.dataStock}
-            initial={0}
-          />
-        </div>
-        <Link to={"/cart"}>
-          <button className="btnBuy">Terminar Compra</button>
-        </Link>
+        {count ? (
+          <Link to="/cart">
+            <button className="btnBuy">Terminar compra ({count} Items)</button>
+          </Link>
+        ) : (
+          <Contador onAdd={onAdd} initial={0} stock={items.dataStock} />
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Contador from "../ItemCount/ItemCount";
 import "./Item.css";
 
 function Item({ id, producto, precio, img, stock }) {
@@ -13,9 +12,6 @@ function Item({ id, producto, precio, img, stock }) {
         <Link to={"/item/" + id}>
           <button className="btnDetail">Ver Detalles</button>
         </Link>
-        <div className="Counter">
-          <Contador stock={stock} initial={0} />
-        </div>
       </div>
     </div>
   );

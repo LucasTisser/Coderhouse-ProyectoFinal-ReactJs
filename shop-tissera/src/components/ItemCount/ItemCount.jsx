@@ -27,15 +27,10 @@ export default function Contador({ stock, initial, onAdd }) {
       <button className="btnMore" onClick={() => handlePlusButton()}>
         +
       </button>
-
       <button
         className="btnAdd"
         onClick={() => {
-          if (count === 0) {
-            alert("Agregue productos para ir al menu de pago");
-          } else {
-            onAdd = count;
-          }
+          count <= stock && onAdd(count);
         }}
       >
         Agregar al Carrito{" "}
