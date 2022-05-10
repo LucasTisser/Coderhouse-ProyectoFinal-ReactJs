@@ -42,9 +42,7 @@ function traerProductos(category) {
     const categoryFilter = category
       ? dataProductos.filter((p) => p.category === category)
       : dataProductos;
-    setTimeout(() => {
-      resolve(categoryFilter);
-    }, 2000);
+    resolve(categoryFilter);
   });
   return promesaProductos;
 }

@@ -3,7 +3,6 @@ import "./ItemCount.css";
 
 export default function Contador({ stock, initial, onAdd }) {
   const [count, setCount] = useState(initial);
-
   function handlePlusButton() {
     if (count < stock) {
       setCount(count + 1);
@@ -12,7 +11,6 @@ export default function Contador({ stock, initial, onAdd }) {
   function handleMinusButton() {
     if (count > 0) setCount(count - 1);
   }
-
   useEffect(() => {
     console.log("Actualice count", count);
     return () => {
@@ -33,7 +31,11 @@ export default function Contador({ stock, initial, onAdd }) {
       <button
         className="btnAdd"
         onClick={() => {
-          count <= stock && onAdd();
+          if (count === 0) {
+            alert("Agregue productos para ir al menu de pago");
+          } else {
+            onAdd = count;
+          }
         }}
       >
         Agregar al Carrito{" "}
