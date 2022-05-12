@@ -47,7 +47,6 @@ function traerDetalleProductos(id) {
 function ItemDetailContainer() {
   const [Detail, setItemDetail] = useState([]);
   const { id } = useParams();
-
   useEffect(() => {
     traerDetalleProductos(id)
       .then((res) => {
@@ -57,7 +56,6 @@ function ItemDetailContainer() {
         console.log("Se ha producido un error", error);
       });
   }, [id]);
-
   return (
     <div className="detailContainerCards">
       <ItemDetail items={Detail} />

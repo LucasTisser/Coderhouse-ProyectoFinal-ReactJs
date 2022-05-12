@@ -1,13 +1,15 @@
 import React from "react";
 import Contador from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useContext } from "react";
 import "./ItemDetail.css";
 import { Link } from "react-router-dom";
+import CartContext from "../../store/CartContext";
 
 function ItemDetail({ items }) {
-  const [count, setCount] = useState(null);
+  const cartCtx = useContext(CartContext);
+
   function onAdd(quantityToAdd) {
-    setCount(quantityToAdd);
+    cartCtx.addProduct({ quantity: quantityToAdd, ...items });
   }
 
   return (
@@ -18,13 +20,25 @@ function ItemDetail({ items }) {
         <img src={items?.img} alt="" />
         <p>{items?.descripcion}</p>
         <p>{items?.precio}</p>
-        {count ? (
-          <Link to="/cart">
-            <button className="btnBuy">Terminar compra ({count} Items)</button>
-          </Link>
-        ) : (
-          <Contador onAdd={onAdd} initial={0} stock={items.dataStock} />
-        )}
+        <button onClick={() => console.log(cartCtx.products)}>
+          Imprimir carrito
+        </button>
+        <button onClick={() => cartCtx.removeProduct(items.id)}>
+          Remove Product
+        </button>
+        <button onClick={() => cartCtx.clear()}>Clear</button>
+        <button onClick={() => console.log(cartCtx.isInCart(items.id))}>
+          Is In cart
+        </button>
+        <button onClick={() => console.log(cartCtx.getCartQuantity())}>
+          quantity
+        </button>
+        <Link to="/cart">
+          <button onClick={() => console.log(cartCtx)} className="btnBuy">
+            Terminar compra ( Items)
+          </button>
+        </Link>
+        <Contador onAdd={onAdd} initial={0} stock={items.dataStock} />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Item.css";
 
-function Item({ id, producto, precio, img, stock }) {
+function Item({ id, producto, precio, img}) {
   return (
     <div id={id} className="itemCountain">
       <div className="itemCard">

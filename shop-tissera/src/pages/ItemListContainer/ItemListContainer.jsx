@@ -49,7 +49,6 @@ function traerProductos(category) {
 const ItemListContainer = () => {
   const [items, setItem] = useState([]);
   const { categoryId } = useParams();
-
   useEffect(() => {
     traerProductos(categoryId)
       .then((res) => {

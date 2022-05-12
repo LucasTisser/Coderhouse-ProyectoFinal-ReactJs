@@ -30,7 +30,9 @@ export default function Contador({ stock, initial, onAdd }) {
       <button
         className="btnAdd"
         onClick={() => {
-          count <= stock && onAdd(count);
+          count === 0
+            ? alert("Por favor, agrega al menos un producto.")
+            : count <= stock && onAdd(count);
         }}
       >
         Agregar al Carrito{" "}
