@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap");
+.cartItem {
+  background-color: #ffdddd;
+  margin: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bubbleQuantity {
+  position: relative;
+  right: 300%;
+  bottom: 160px;
+}
+.cartImgContainer {
+  height: 350px;
+  width: 350px;
+}
+.propContainer {
+  margin: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.cartTitleProp {
+  font-family: "Prompt", sans-serif;
+  margin: 15px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.cartPriceProp {
+  font-family: "Akshar", sans-serif;
+  font-size: 26px;
+  margin: 15px;
+}
+.priceCart {
+  margin: 0px 4px 0px 4px;
+}
+.bubbleClose {
+  position: relative;
+  left: 300%;
+  bottom: 160px;
+}

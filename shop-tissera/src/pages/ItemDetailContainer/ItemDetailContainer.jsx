@@ -9,16 +9,16 @@ function traerDetalleProductos(id) {
       {
         id: 1,
         producto: "Caramelos Buttertoffees",
-        descripcion: "Caramelos Dulces mMsticables de 5 sabores",
-        precio: "$" + 500,
-        img: "https://gruponaomis.com/wp-content/uploads/2021/01/BUTTER-TOFEE-SURTIDO_800px-min.png",
+        descripcion: "Caramelos Dulces Masticables de 5 sabores",
+        precio: 500,
+        img: "https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/butter-tofees-chocolate1-29b1f3649a5fd14f0016249928052805-480-0.png",
         dataStock: 10,
       },
       {
         id: 2,
         producto: "Flynn Paff",
         descripcion: "Caramelo sabor Tutti-Frutti",
-        precio: "$" + 450,
+        precio: 450,
         img: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/851/216/products/chupetines_flynn_paff1-b26b52d7d0edcdfd5916348380371442-480-0.png",
         dataStock: 15,
       },
@@ -26,15 +26,15 @@ function traerDetalleProductos(id) {
         id: 3,
         producto: "Sugus confitados",
         descripcion: "Confites surtidos de varios sabores",
-        precio: "$" + 700,
-        img: "https://storage.googleapis.com/comprarporwhatsapp-19eb8.appspot.com/FgXNnZge5egzJONZIHjF/products/renditions/1601924769077_thumb.png",
+        precio: 700,
+        img: "https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/sugus1-e9d2247ae4082aad5f16062608055544-480-0.png",
         dataStock: 17,
       },
       {
         id: 4,
         producto: "Mogul",
         descripcion: "Gomitas de frutilla, menta, naranja y manzana",
-        precio: "$" + 650,
+        precio: 650,
         img: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/851/216/products/gomitas_mogul_en_rollo1-4d5724c8a880b8fd6216348432541646-480-0.png",
         dataStock: 20,
       },
@@ -62,5 +62,4 @@ function ItemDetailContainer() {
     </div>
   );
 }
-
 export default ItemDetailContainer;

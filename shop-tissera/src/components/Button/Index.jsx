@@ -6,7 +6,6 @@ export const Button = ({ texto, color, children }) => {
 
   // const texto = props.texto; /* codigo estructurado */
   // const color = props.color;
-
   return (
     <>
       <input type="text" />

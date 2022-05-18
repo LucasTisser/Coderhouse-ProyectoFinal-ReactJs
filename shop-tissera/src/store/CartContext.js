@@ -7,6 +7,7 @@ const CartContext = createContext({
   clear: () => {},
   isInCart: () => {},
   getCartQuantity: () => {},
+  getTotalPrice: () => {},
 });
 export const CartContextProvider = ({ children }) => {
   const [productsList, setProductsList] = useState([]);
@@ -29,14 +30,19 @@ export const CartContextProvider = ({ children }) => {
   };
   const removeProduct = (id) => {
     const indexToRemove = productsList.findIndex((item) => item.id === id);
-    if (productsList[indexToRemove].quantity === 1) {
-      setProductsList(productsList.filter((i) => i.id !== id));
+
+    if (productsList[indexToRemove]) {
+      if (productsList[indexToRemove].quantity === 1) {
+        setProductsList(productsList.filter((i) => i.id !== id));
+      } else {
+        setProductsList(
+          productsList.map((p) =>
+            p.id === id ? { ...p, quantity: p.quantity - 1 } : p
+          )
+        );
+      }
     } else {
-      setProductsList(
-        productsList.map((p) =>
-          p.id === id ? { ...p, quantity: p.quantity - 1 } : p
-        )
-      );
+      alert("No se encuentra este producto en su carrito");
     }
   };
   const clear = () => {
@@ -51,6 +57,12 @@ export const CartContextProvider = ({ children }) => {
     }, 0);
     // devuelve la suma de las cantidades de los productos
   };
+
+  const getTotalPrice = () => {
+    return productsList.reduce((total, value) => {
+      return total + value.precio * value.quantity;
+    }, 0);
+  };
   return (
     <CartContext.Provider
       value={{
@@ -60,6 +72,7 @@ export const CartContextProvider = ({ children }) => {
         clear,
         isInCart,
         getCartQuantity,
+        getTotalPrice,
       }}
     >
       {children}

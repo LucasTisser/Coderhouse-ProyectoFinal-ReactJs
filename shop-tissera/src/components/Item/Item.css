@@ -1,26 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
 
 .itemCountain {
-  width: 100%;
-  margin: 5%;
+  margin: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.itemCard {
-  height: 75%;
-  width: 120%;
+.Card {
   background-color: #ffdddd;
   border-radius: 20px;
 }
-.imgCard {
-  height: 45%;
-  width: 100%;
+.tituloCard,
+.btnCard {
+  font-family: "Prompt", sans-serif;
 }
-
-.tituloCard {
+.priceCard {
   font-family: "Bebas Neue", cursive;
 }
-.btnDetail {
-  width: 100%;
+.btnCard {
   background-color: #680000;
+  border-radius: 15px 15px 15px 15px;
   color: white;
-  border-radius: 15px 15px 0px 0px;
+  width: 100%;
+}
+.btnCard:hover {
+  background-color: white;
+  color: #680000;
 }

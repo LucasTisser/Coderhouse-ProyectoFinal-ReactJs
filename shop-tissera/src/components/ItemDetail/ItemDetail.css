@@ -1,17 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+
 .ItemDetailCard {
+  display: flex;
+  align-items: center;
+}
+.CardDetail {
   background-color: rgb(255, 221, 221);
   border-radius: 15px;
-  margin: 20px;
   text-align: center;
-  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.txtDetailCard img {
-  height: 5%;
-  width: 75%;
+.ImgItemDetail {
+  height: auto;
+  width: auto;
+}
+.titleCardDetail,
+.descriptionCardDetail,
+.btnDetail,
+.btnBuy {
+  font-family: "Prompt", sans-serif;
+}
+.priceCardDetail {
+  font-family: "Bebas Neue", cursive;
+}
+.btnDetail {
+  border-radius: 15px 15px 15px 15px;
+  background-color: #680000;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+}
+.btnDetail:hover,
+.btnBuy:hover {
+  background-color: white;
+  color: #680000;
 }
 .btnBuy {
   width: 100%;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 15px 15px 15px 15px;
   background-color: #680000;
   color: white;
   text-decoration: none;

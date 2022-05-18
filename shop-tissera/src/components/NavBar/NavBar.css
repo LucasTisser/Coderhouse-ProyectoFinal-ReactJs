@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+
 .nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   background-color: rgba(205, 16, 19, 0.886);
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Prompt", sans-serif;
 }
 .nav a {
   text-decoration: none;
@@ -12,33 +15,23 @@
 .nav a:hover {
   color: black;
 }
-.logoContainer {
-  height: auto;
-  width: 10%;
-}
 .logoImg {
   margin: 16px;
-  height: 75%;
-  width: 75%;
+  height: 100px;
+  width: 100px;
 }
 .navLinks {
-  width: 60%;
-  display: flex;
-  justify-content: center;
-}
-
-.cartWidget {
-  width: 20%;
-  padding-top: 2%;
-  text-align: center;
+  width: 50%;
 }
 .navList {
   display: flex;
-  width: 80%;
+  align-items: center;
   justify-content: space-around;
   list-style-type: none;
 }
 .navList li {
-  margin-top: 4%;
   font-size: 200%;
+}
+.cartWidget {
+  text-align: center;
 }

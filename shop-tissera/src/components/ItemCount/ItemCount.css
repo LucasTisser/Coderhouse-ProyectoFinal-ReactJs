@@ -1,40 +1,40 @@
-.itemCount {
-  border-radius: 0px 0px 15px 15px;
-  background-color: #de8787;
-  display: grid;
-  grid-template-areas:
-    "btnLess counter btnMore"
-    "btnAdd btnAdd btnAdd";
-}
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
 
+.itemCount {
+  border-radius: 15px 15px 15px 15px;
+  background-color: #de8787;
+  margin-bottom: 10px;
+}
+.countHandlers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .btnLess,
 .btnMore {
   height: 30px;
   width: 30px;
-  margin-top: 15px;
-  margin-left: 20px;
+  margin: 20px;
   background-color: #680000;
   color: white;
   border-radius: 50%;
+  font-family: "Prompt", sans-serif;
 }
-.btnLess {
-  grid-area: btnLess;
-}
-.btnMore {
-  grid-area: btnMore;
-}
-
 .counter {
-  margin-left: 25px;
   text-align: center;
   width: 40px;
-  grid-area: counter;
+  font-family: "Prompt", sans-serif;
 }
-
 .btnAdd {
-  grid-area: btnAdd;
-  width: auto;
+  width: 100%;
   background-color: #680000;
   color: white;
   border-radius: 0px 0px 15px 15px;
+  font-family: "Prompt", sans-serif;
+}
+.btnAdd:hover,
+.btnMore:hover,
+.btnLess:hover {
+  background-color: white;
+  color: #680000;
 }
