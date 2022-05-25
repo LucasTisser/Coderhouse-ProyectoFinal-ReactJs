@@ -1,0 +1,27 @@
+.checkout {
+  background-image: url("https://cdn.pixabay.com/photo/2012/06/27/15/02/candy-50838_960_720.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CardForm {
+  background-color: rgb(255, 221, 221);
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.CardFinish {
+  background-color: rgb(255, 221, 221);
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}

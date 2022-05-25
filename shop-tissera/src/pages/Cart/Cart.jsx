@@ -20,19 +20,23 @@ function Cart() {
             <Card.Text className="finishPriceCart">
               Precio total:${cartCtx.getTotalPrice()}
             </Card.Text>
-            <Button variant="success">Terminar compra</Button>{" "}
+            <Link to="/checkout">
+              <Button variant="primary">Finalizar Compra</Button>{" "}
+            </Link>
           </Card.Body>
         </Card>
       ) : (
         <>
-          <Card className="notProductCard">
-            <Card.Title>No hay productos en el carrito</Card.Title>
-            <Link to="/">
-              <Button variant="dark" className="btnFinish">
-                Ir al inicio
-              </Button>{" "}
-            </Link>
-          </Card>
+          <div className="notProductCardContainer">
+            <Card className="notProductCard">
+              <Card.Title>No hay productos en el carrito</Card.Title>
+              <Link to="/">
+                <Button variant="dark" className="btnFinish">
+                  Ir al inicio
+                </Button>{" "}
+              </Link>
+            </Card>
+          </div>
         </>
       )}
     </div>

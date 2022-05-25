@@ -7,4 +7,5 @@
   background-position: center;
   background-size: cover;
   flex-wrap: wrap;
+  height:100vh;
 }

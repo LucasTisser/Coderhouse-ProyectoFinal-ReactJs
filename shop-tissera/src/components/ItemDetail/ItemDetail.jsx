@@ -14,7 +14,6 @@ function ItemDetail({ items }) {
   function onAdd(quantityToAdd) {
     cartCtx.addProduct({ quantity: quantityToAdd, ...items });
   }
-
   return (
     <div id={items?.id} className="ItemDetailCard">
       <Card style={{ height: "30rem", width: "80rem" }} bsPrefix={"CardDetail"}>
@@ -57,7 +56,7 @@ function ItemDetail({ items }) {
             >
               quantity
             </Button>
-            <Contador onAdd={onAdd} initial={0} stock={items.dataStock} />
+            <Contador onAdd={onAdd} initial={0} stock={items?.dataStock} />
           </div>
           <Link to="/cart">
             <Button bsPrefix={"btnBuy"}>Ir al carrito</Button>
