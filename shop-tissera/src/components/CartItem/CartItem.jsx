@@ -6,6 +6,8 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartItem.css";
+import "toastify-js/src/toastify.css";
+import Toastify from 'toastify-js';
 
 function CartItem({ item }) {
   const cartCtx = useContext(CartContext);
@@ -35,7 +37,13 @@ function CartItem({ item }) {
               unidad/es de este producto
             </CardGroup>
           </Card.Header>
-          <Bubble isButton onBubbleClick={() => cartCtx.removeProduct(item.id)}>
+          <Bubble isButton onBubbleClick={() => Toastify({
+            text: "Se ha eliminado un producto en tu carrito.",
+            duration: 2000,
+            style: {
+              background: "linear-gradient(to right, #8f1919, #d64444)",
+            }
+            }).showToast() && cartCtx.removeProduct(item.id)}>
             <Badge className="bubbleClose" pill bg="danger">
               X
             </Badge>

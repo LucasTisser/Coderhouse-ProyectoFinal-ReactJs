@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "toastify-js/src/toastify.css";
+import Toastify from 'toastify-js';
 
 function Cart() {
   const cartCtx = useContext(CartContext);
@@ -21,8 +23,15 @@ function Cart() {
               Precio total:${cartCtx.getTotalPrice()}
             </Card.Text>
             <Link to="/checkout">
-              <Button variant="primary">Finalizar Compra</Button>{" "}
+              <Button variant="success">Finalizar Compra</Button>{" "}
             </Link>
+            <Button variant="primary" onClick={() => Toastify({
+            text: "Se ha Limpiado el Carrito.",
+            duration: 2000,
+            style: {
+              background: "linear-gradient(to right, #8f1919, #d64444)",
+            }
+            }).showToast() && cartCtx.clear()}>Limpiar Carrito</Button>{" "}
           </Card.Body>
         </Card>
       ) : (

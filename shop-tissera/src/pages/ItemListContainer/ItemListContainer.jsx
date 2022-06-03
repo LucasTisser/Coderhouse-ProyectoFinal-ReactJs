@@ -4,11 +4,18 @@ import ItemList from "../../components/ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../../services/firebase";
+import Spinner from "../../components/Spinner/Spinner";
+
 
 const ItemListContainer = () => {
   const [items, setItem] = useState([]);
+  const [load, setLoad] = useState(false);
   const { categoryId } = useParams();
+
+  
+
   const traerProductos = async (category) => {
+    setLoad(true);
     try {
       const q = category
         ? query(collection(db, "Items"), where("category", "==", category))
@@ -18,6 +25,7 @@ const ItemListContainer = () => {
         (doc) => (doc = { id: doc.id, ...doc.data() })
       );
       setItem(result);
+      setLoad(false);
     } catch (error) {
       console.log("se ha producido un error." + error);
     }
@@ -25,10 +33,14 @@ const ItemListContainer = () => {
   useEffect(() => {
     traerProductos(categoryId);
   }, [categoryId]);
+  
   return (
-    <div className="listContainer">
-      <div className="itemscontainer">
-        <ItemList items={items} />
+    <div className="listContainer" >
+      <div className="itemsContainer">
+        
+        {
+          load ? <Spinner/> : <ItemList items={items}/>
+        }
       </div>
     </div>
   );

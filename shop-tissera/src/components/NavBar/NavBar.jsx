@@ -25,10 +25,16 @@ function NavBar() {
               <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
-              <NavLink to={"/category/chocolate"}>Chocolates</NavLink>
+              <NavLink to={"/category/chocolates"}>Chocolates</NavLink>
             </li>
             <li>
-              <NavLink to={"/category/golosina"}>Golosinas</NavLink>
+              <NavLink to={"/category/obleas"}>Obleas</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/category/alfajores"}>Alfajores</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/category/caramelos"}>Caramelos</NavLink>
             </li>
           </ul>
         </Nav>

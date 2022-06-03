@@ -53,7 +53,6 @@ const Checkout = () => {
     });
     const total = getTotalPrice();
     const data = { buyer, items, dia, total };
-    console.log("data", data);
     generateOrder(data);
   };
   return (
@@ -108,7 +107,7 @@ const Checkout = () => {
         )
       )}
       <div>
-        {OrderID && (
+        { OrderID && (
           <Card
             className="CardFinish"
             style={{ height: "10rem", width: "35rem" }}
@@ -123,6 +122,7 @@ const Checkout = () => {
           </Card>
         )}
       </div>
+      
     </div>
   );
 };

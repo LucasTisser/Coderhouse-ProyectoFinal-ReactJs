@@ -6,9 +6,7 @@
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  background-image: url("https://cdn.pixabay.com/photo/2012/06/27/15/02/candy-50838_960_720.jpg");
-  background-size: cover;
-  background-position: center;
+  /* height: 100vh; */
 }
 .totalContainer {
   background-color: #ffdddd;

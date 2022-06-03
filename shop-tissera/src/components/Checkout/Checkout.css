@@ -1,7 +1,4 @@
 .checkout {
-  background-image: url("https://cdn.pixabay.com/photo/2012/06/27/15/02/candy-50838_960_720.jpg");
-  background-position: center;
-  background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;

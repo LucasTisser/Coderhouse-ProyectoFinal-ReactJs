@@ -1,10 +1,15 @@
 import React from "react";
 import Item from "../Item/Item";
 import "./ItemList.css";
+import AOS from 'aos';
+
+
 
 function ItemList({ items }) {
-  return (
-    <div className="itemList">
+  
+  AOS.init();
+    return (
+    <div className="itemList" data-aos="zoom-in">
       {items.map((item) => {
         return (
           <Item
@@ -15,7 +20,8 @@ function ItemList({ items }) {
             img={item.img}
             stock={item.dataStock}
           />
-        );
+      );
+        
       })}
     </div>
   );

@@ -6,17 +6,22 @@ import "./app.css";
 import { Routes, Route } from "react-router-dom";
 import Checkout from "./components/Checkout/Checkout";
 
+
 export default function App() {
+  
   return (
-    <div className="App">
+    <div className="App" >
       <NavBar />
-      <Routes>
+      <div className="Routes">
+        <Routes>
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
+      </div>
+      
     </div>
   );
 }

@@ -7,18 +7,20 @@ import CartContext from "../../store/CartContext";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AOS from 'aos';
 
 function ItemDetail({ items }) {
   const cartCtx = useContext(CartContext);
-
+  console.log(items)
   function onAdd(quantityToAdd) {
     cartCtx.addProduct({ quantity: quantityToAdd, ...items });
   }
+  AOS.init();
   return (
-    <div id={items?.id} className="ItemDetailCard">
-      <Card style={{ height: "30rem", width: "80rem" }} bsPrefix={"CardDetail"}>
-        <Card.Img variant="top" src={items?.img} bsPrefix={"ImgItemDetail"} />
-        <Card.Body>
+    <div id={items?.id} className="ItemDetailCard" data-aos="zoom-out">
+      <Card style={{ height: "40rem", width: "55rem" }} bsPrefix={"CardDetail"}>
+        <Card.Img src={items?.img} bsPrefix={"ImgItemDetail"} />
+        <Card.Body className={"CardDetailBody"}>
           <div>
             <Card.Title className="titleCardDetail">
               {items?.producto}
@@ -28,39 +30,12 @@ function ItemDetail({ items }) {
             </Card.Text>
             <Card.Text className="priceCardDetail">${items?.precio}</Card.Text>
           </div>
-          <div>
-            <Button
-              bsPrefix={"btnDetail"}
-              onClick={() => console.log(cartCtx.products)}
-            >
-              Imprimir carrito
-            </Button>
-            <Button
-              bsPrefix={"btnDetail"}
-              onClick={() => cartCtx.removeProduct(items.id)}
-            >
-              Remove Product
-            </Button>
-            <Button bsPrefix={"btnDetail"} onClick={() => cartCtx.clear()}>
-              Clear
-            </Button>
-            <Button
-              bsPrefix={"btnDetail"}
-              onClick={() => console.log(cartCtx.isInCart(items.id))}
-            >
-              Is In cart
-            </Button>
-            <Button
-              bsPrefix={"btnDetail"}
-              onClick={() => console.log(cartCtx.getCartQuantity())}
-            >
-              quantity
-            </Button>
+          <div className="col-4">
             <Contador onAdd={onAdd} initial={0} stock={items?.dataStock} />
-          </div>
-          <Link to="/cart">
+            <Link to="/cart">
             <Button bsPrefix={"btnBuy"}>Ir al carrito</Button>
           </Link>
+          </div>
         </Card.Body>
       </Card>
     </div>
