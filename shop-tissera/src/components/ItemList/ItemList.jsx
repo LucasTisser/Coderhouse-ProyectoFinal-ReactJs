@@ -19,6 +19,7 @@ function ItemList({ items }) {
             id={item.id}
             img={item.img}
             stock={item.dataStock}
+            rating={item.rating}
           />
       );
         

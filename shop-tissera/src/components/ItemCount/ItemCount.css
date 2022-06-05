@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
 
 .itemCount {
   border-radius: 15px 15px 15px 15px;
-  background-color: #de8787;
+  background-color: #ffadad;
   margin-bottom: 10px;
+  height: 50px;
+  display: flex;
 }
 .countHandlers {
   display: flex;
@@ -18,19 +21,26 @@
   background-color: #680000;
   color: white;
   border-radius: 50%;
-  font-family: "Prompt", sans-serif;
+  border: none;
+  /* font-family: "Prompt", sans-serif; */
+  font-family: 'Asap', sans-serif;
+  transition: all 0.3s ease;
 }
 .counter {
   text-align: center;
   width: 40px;
-  font-family: "Prompt", sans-serif;
+  /* font-family: "Prompt", sans-serif; */
+  font-family: 'Asap', sans-serif;
 }
 .btnAdd {
   width: 100%;
   background-color: #680000;
   color: white;
-  border-radius: 0px 0px 15px 15px;
-  font-family: "Prompt", sans-serif;
+  transition: all 0.3s ease;
+  border-radius: 0px 15px 15px 0px;
+  /* font-family: "Prompt", sans-serif; */
+  font-family: 'Asap', sans-serif;
+  border: none;
 }
 .btnAdd:hover,
 .btnMore:hover,

@@ -9,45 +9,55 @@ import "./CartItem.css";
 import "toastify-js/src/toastify.css";
 import Toastify from 'toastify-js';
 
+
 function CartItem({ item }) {
   const cartCtx = useContext(CartContext);
+  
   return (
-    <div>
-      <Card style={{ height: "20rem", width: "80rem" }} className="cartItem">
-        <Card.Body className="cartContainer">
-          <Bubble>
-            <Badge className="bubbleQuantity" bg="danger" pill>
-              {item.quantity}
-            </Badge>
-          </Bubble>
-          <Card.Img
-            className="cartImgContainer"
-            variant="top"
-            src={item?.img}
-          />
-          <Card.Header className="propContainer">
-            <Card.Title className="cartTitleProp">{item?.producto}</Card.Title>
-            <CardGroup className="cartPriceProp">
-              El precio por unidad es de{" "}
-              <Card.Text className="priceCart">${item?.precio}</Card.Text>
-            </CardGroup>
-            <CardGroup className="cartPriceProp">
-              Usted esta por comprar{" "}
-              <Card.Text className="priceCart">{item?.quantity}</Card.Text>{" "}
-              unidad/es de este producto
-            </CardGroup>
-          </Card.Header>
-          <Bubble isButton onBubbleClick={() => Toastify({
+    <div className="cartMain">
+      <Card style={{ height: "25rem", width: "55rem" }} className="cartItem">
+      <CardGroup className="badges">
+            <Bubble>
+              <Badge className="bubbleQuantity" bg="danger" pill>
+                {item.quantity}
+              </Badge>
+            </Bubble>
+            <Bubble isButton onBubbleClick={() => Toastify({
             text: "Se ha eliminado un producto en tu carrito.",
             duration: 2000,
             style: {
               background: "linear-gradient(to right, #8f1919, #d64444)",
+              fontFamily: 'Asap',
             }
             }).showToast() && cartCtx.removeProduct(item.id)}>
             <Badge className="bubbleClose" pill bg="danger">
               X
             </Badge>
-          </Bubble>
+            </Bubble>   
+          </CardGroup>
+        <Card.Body className="cartContainer">
+          <CardGroup>
+            <Card.Img
+            className="cartImgContainer"
+            variant="top"
+            src={item?.img}
+            />
+          </CardGroup>
+          
+          <CardGroup className="propContainer">
+            
+            <Card.Title className="cartTitleProp">{item?.producto}</Card.Title>
+            <CardGroup className="cartPriceProp">
+              El precio por unidad es de{" "}
+              <Card.Text className="priceCart">${item?.precio}.00</Card.Text>
+            </CardGroup>
+            <CardGroup className="cartPriceProp">
+              Contiene {" "}
+              <Card.Text className="priceCart">{item?.quantity}</Card.Text>{" "}
+              unidad/es de este producto 
+            </CardGroup>
+          </CardGroup>
+          
         </Card.Body>
       </Card>
     </div>

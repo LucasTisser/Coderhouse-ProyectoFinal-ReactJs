@@ -8,11 +8,13 @@ import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "toastify-js/src/toastify.css";
 import Toastify from 'toastify-js';
+import AOS from 'aos';
 
 function Cart() {
   const cartCtx = useContext(CartContext);
+  AOS.init();
   return (
-    <div className="CartItemsContainer">
+    <div className="CartItemsContainer" data-aos="zoom-out">
       {cartCtx.products.map((p) => (
         <CartItem item={p} key={p.id} />
       ))}
@@ -20,23 +22,25 @@ function Cart() {
         <Card className="totalContainer">
           <Card.Body className="cartFinishcontainer">
             <Card.Text className="finishPriceCart">
-              Precio total:${cartCtx.getTotalPrice()}
+              Precio total:${cartCtx.getTotalPrice()}.00
             </Card.Text>
-            <Link to="/checkout">
-              <Button variant="success">Finalizar Compra</Button>{" "}
+            <Link to="/checkout">{""}
+              <Button className="btnFinish">Finalizar Compra</Button>{" "}
             </Link>
-            <Button variant="primary" onClick={() => Toastify({
+            <Button className="btnClean" onClick={() => Toastify({
             text: "Se ha Limpiado el Carrito.",
             duration: 2000,
             style: {
               background: "linear-gradient(to right, #8f1919, #d64444)",
+              fontFamily: 'Asap',
             }
             }).showToast() && cartCtx.clear()}>Limpiar Carrito</Button>{" "}
           </Card.Body>
+          
         </Card>
       ) : (
         <>
-          <div className="notProductCardContainer">
+          <div className="notProductCardContainer" data-aos="zoom-out">
             <Card className="notProductCard">
               <Card.Title>No hay productos en el carrito</Card.Title>
               <Link to="/">

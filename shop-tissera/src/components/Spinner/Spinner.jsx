@@ -1,15 +1,13 @@
 import React from "react";
-import { SpinnerStyle } from "./SpinnerStyle";
+import SyncLoader from "react-spinners/SyncLoader";
+
 const Spinner = () => {
+
   return (
     <>
       {
         <div className="d-flex justify-content-center">
-          <div
-            className="spinner-border"
-            role="status"
-            style={SpinnerStyle}
-          ></div>
+          <SyncLoader color="#f6ff00" css={'margin: 375px'}/>
         </div>
       }
     </>

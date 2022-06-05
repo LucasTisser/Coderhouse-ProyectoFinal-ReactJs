@@ -1,24 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap');
 .CartItemsContainer {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* height: 100vh; */
+  align-items: center;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
 }
 .totalContainer {
   background-color: #ffdddd;
   padding: 5px;
   margin: 20px;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
   font-family: "Prompt", sans-serif;
+  font-family: 'ABeeZee', sans-serif;
   letter-spacing: 2px;
+  margin: 20px 350px 20px 350px;
 }
 .cartFinishcontainer {
   text-align: center;
@@ -33,17 +30,37 @@
   flex-direction: column;
   margin: 20px;
   padding: 20px;
-  font-family: "Prompt", sans-serif;
+  font-family: 'ABeeZee', sans-serif;
   background-color: #ffdddd;
   border-radius: 20px;
 }
-.btnFinish {
-  color: white;
-}
-
 .notProductCardContainer {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.btnClean, .btnFinish {
+  text-decoration: none;
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 20px;
+  background: #680000;
+  border:none;
+}
+.btnClean:hover, .btnFinish:hover {
+  background: #fff;
+  color: #680000;
+}
+.btnFinish a:hover{
+  color: #680000;
+  text-decoration: none;
 }

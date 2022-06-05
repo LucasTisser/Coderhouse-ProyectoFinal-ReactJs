@@ -37,6 +37,7 @@ export default function Contador({ stock, initial, onAdd }) {
               duration: 3000,
               style: {
               background: "linear-gradient(to right, #8f1919, #d64444)",
+              fontFamily: 'Asap',
               }
               }).showToast() &&
             count <=stock && onAdd(count)
@@ -46,6 +47,7 @@ export default function Contador({ stock, initial, onAdd }) {
               duration: 2000,
               style: {
                 background: "linear-gradient(to right, #8f1919, #d64444)",
+                fontFamily: 'Asap',
               }
               }).showToast()
               

@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import CardGroup from 'react-bootstrap/CardGroup'
 
-function Item({ id, producto, precio, img}) {
+function Item({ id, producto, precio, img,rating}) {
   const [count] = useState(1)
 
   const cartCtx = useContext(CartContext);
@@ -31,7 +31,7 @@ function Item({ id, producto, precio, img}) {
           <Card.Title className="tituloCard">{producto}</Card.Title>
           <CardGroup bsPrefix="CardMid">
             <Card.Text bsPrefix={"priceCard"}>${precio}.00</Card.Text>
-            <Card.Text className="rating"><FontAwesomeIcon icon={faStar}/>5.0</Card.Text>
+            <Card.Text className="rating"><FontAwesomeIcon icon={faStar}/>{rating}</Card.Text>
           </CardGroup>
           
           <CardGroup bsPrefix="CardBottom">
@@ -46,12 +46,13 @@ function Item({ id, producto, precio, img}) {
             duration: 2000,
             style: {
               background: "linear-gradient(to right, #8f1919, #d64444)",
+              fontFamily: 'Asap',
             }
             }).showToast() &&
           onAdd(count)
         }}
       >
-        Agregar al Carrito{" "}
+        Comprar{" "}
       </Button>{" "}
           </CardGroup>
         </Card.Body>

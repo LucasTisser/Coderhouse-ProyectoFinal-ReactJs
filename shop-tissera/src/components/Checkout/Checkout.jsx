@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import "./Checkout.css";
 import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
+import AOS from 'aos';
+import Form from 'react-bootstrap/Form'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
 
 const Checkout = () => {
   const { products, getTotalPrice, clear } = useContext(CartContext);
@@ -14,19 +18,17 @@ const Checkout = () => {
   const [OrderID, setOrder] = useState(false);
 
   const [buyer, setBuyer] = useState({
-    Nombre: "",
-    Email: "",
-    Telefono: "",
   });
 
   const { Nombre, Email, Telefono } = buyer;
-  const handleInputChange = (e) => {
+  const handleChange = (e) => {
     setBuyer({
       ...buyer,
       [e.target.name]: e.target.value,
     });
+    console.log(e.target.value)
   };
-
+  
   const generateOrder = async (data) => {
     setLoad(true);
     try {
@@ -55,70 +57,53 @@ const Checkout = () => {
     const data = { buyer, items, dia, total };
     generateOrder(data);
   };
+  AOS.init();
   return (
-    <div className="checkout">
-      {/* <h1>Finalizando Compra</h1> */}
+    <div className="checkout" data-aos="zoom-out">
       {load ? (
         <Spinner />
       ) : (
         !OrderID && (
           <Card
             className="CardForm"
-            style={{ height: "17rem", width: "20rem" }}
+            style={{ height: "20rem", width: "30rem" }}
           >
-            <h4>Completa los Datos para finalizar su compra:</h4>
-            <br />
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="Nombre"
-                placeholder="Nombre"
-                value={Nombre}
-                onChange={handleInputChange}
-                required
-              />
-              <br />
-              <input
-                type="email"
-                name="Email"
-                placeholder="Email"
-                value={Email}
-                onChange={handleInputChange}
-                required
-              />
-              <br />
-              <input
-                type="number"
-                name="Telefono"
-                placeholder="Telefono"
-                value={Telefono}
-                onChange={handleInputChange}
-                required
-              />
-              <br /> <br />
-              <input
-                type="submit"
-                value="Finalizar Compra"
-                className="btn btn-success mb-2"
-                required
-              />
-            </form>
+            <Card.Title>Completa los Datos para finalizar su compra:</Card.Title>
+            <Form onSubmit={handleSubmit}>
+              <FloatingLabel controlId="floatingName" label="Nombre" className="mb-3">
+                <Form.Control value={Nombre} name="Nombre" onChange={handleChange} type="text" placeholder="Nombre" required />
+              </FloatingLabel>
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mb-3"
+              >
+                <Form.Control value={Email} name="Email" onChange={handleChange} type="email" placeholder="name@example.com" required/>
+              </FloatingLabel>
+              <FloatingLabel controlId="floatingTel" label="Telefono" className="mb-3">
+                <Form.Control value={Telefono} name="Telefono" onChange={handleChange} type="number" placeholder="Telefono" required/>
+              </FloatingLabel>
+              <Form.Control className="btn btn-success mb-2 btnCard" value={"Finalizar Compra"} type="submit" required />
+
+            </Form>
+            
           </Card>
         )
       )}
       <div>
         { OrderID && (
           <Card
+            data-aos="zoom-out"
             className="CardFinish"
-            style={{ height: "10rem", width: "35rem" }}
+            style={{ height: "15rem", width: "35rem" }}
           >
-            <div>
-              <h4>Compra Finalizada con Exito</h4>
-              <h4>{`Su codigo de compra es: ${OrderID}`}</h4>
+            <CardGroup className="CardFinishContainer">
+              <Card.Title className="mb-4">Compra Finalizada con Exito!</Card.Title>
+              <Card.Subtitle className="mb-4">{`Su codigo de compra es: ${OrderID}`}</Card.Subtitle>
               <Link to="/">
-                <Button variant="primary">Ir al inicio</Button>{" "}
+                <Button bsPrefix={"btnCard"}>Ir al Inicio</Button>{" "}
               </Link>
-            </div>
+            </CardGroup>
           </Card>
         )}
       </div>

@@ -1,22 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
+.cartMain{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+}
+.badges{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 .cartItem {
   background-color: #ffdddd;
   margin: 20px;
   border-radius: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-around;
 }
 .cartContainer {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding-bottom: 43.19px;
 }
 .bubbleQuantity {
   position: relative;
-  right: 300%;
-  bottom: 160px;
+  right: 255px;
+  bottom: 15px;
+  font-size: 16px;
 }
 .cartImgContainer {
   height: 300px;
@@ -25,28 +39,35 @@
   padding:10px;
 }
 .propContainer {
-  margin: 15px;
+  height: 100%;
+  margin: 10px;
+  padding: 15px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  border-left:#680000 solid 2px;
 }
 .cartTitleProp {
-  font-family: "Prompt", sans-serif;
+  /* font-family: "Prompt", sans-serif; */
+  font-family: 'Asap', sans-serif;
   margin: 15px;
-  font-weight: bold;
   text-align: center;
   letter-spacing: 5px;
+  border-bottom: #680000 solid 2px;
 }
 .cartPriceProp {
-  font-family: "Akshar", sans-serif;
-  font-size: 26px;
-  margin: 15px;
+  text-align: center;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 24px;
+  margin: 5px;
 }
 .priceCart {
   margin: 0px 4px 0px 4px;
+  text-align: center;
 }
 .bubbleClose {
   position: relative;
-  left: 300%;
-  bottom: 160px;
+  left: 255px;
+  bottom:15px;
+  font-size: 16px;
 }
