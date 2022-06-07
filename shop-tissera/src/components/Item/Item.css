@@ -1,52 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
+/* Import Fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"); /* font-family: "Prompt", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap"); /* font-family: 'ABeeZee', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap"); /* font-family: 'Asap', sans-serif; */
+/* Import Fuentes */
+
+/* Codigo clasificado por orden de aparicion en Item.jsx */
 .itemCountain {
   margin: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.CardBody{
-  padding:10px ;
-}
 .Card {
   background-color: #ffdddd;
   border-radius: 20px;
-  transition: all .2s ease-in-out
+  transition: all 0.2s ease-in-out;
 }
-.CardMid{
-  margin:10px;
+.Card:hover {
+  box-shadow: inset 0px 0px 20px 10px rgba(106, 2, 2, 0.193);
+  transform: scale(1.1);
+}
+.CardBody {
+  padding: 10px;
+}
+.tituloCard {
+  border-radius: 15px;
+  width: 100%;
+  margin: 1;
+  font-size: 17px;
+  font-family: "Asap", sans-serif;
+}
+.CardMid {
+  margin: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-around ;
-}
-.tituloCard,
-.btnCard,.btnAddList {
-  /* font-family: "Prompt", sans-serif; */
-  /* font-family: 'Emilys Candy', cursive; */
-  font-family: 'Asap', sans-serif;
-  font-size: 17px;
+  justify-content: space-around;
 }
 .priceCard {
-  font-family: 'ABeeZee', sans-serif;
-  padding-right: 15% ;
-  border-right:solid 2px;
+  font-family: "ABeeZee", sans-serif;
+  padding-right: 15%;
+  border-right: solid 2px;
   border-color: #680000;
   margin: 0px 0px 0px 0px;
   font-size: 30px;
 }
-.btnAddList {
-  background-color: #680000;
-  color: white;
-  border-radius: 0px 15px 15px 0px;
-  border:none;
-  border-left:solid 2px;
-  border-color: #ffdddd;
-  padding: 1px 6px 1px 6px;
+.rating {
+  font-family: "ABeeZee", sans-serif;
 }
-.btnCard,.btnAddList {
+.CardBottom {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.btnCard,
+.btnAddList {
   text-align: center;
   min-width: 130px;
   height: 40px;
@@ -60,31 +67,14 @@
   border-radius: 20px;
   background: #680000;
   border: none;
+  font-family: "Asap", sans-serif;
+  font-size: 17px;
 }
-.btnCard:hover , .btnAddList:hover {
+.btnAddList {
+  border-left: solid 2px;
+}
+.btnCard:hover,
+.btnAddList:hover {
   background: #fff;
   color: #680000;
-  /* border: 2px solid #680000; */
-}
-
-
-.Card:hover {
-  box-shadow: inset 0px 0px 20px 10px rgba(106, 2, 2, 0.193);
-  transform: scale(1.1);
-}
-.tituloCard {
-  border-radius:15px;
-  width: 100%;
-  margin: 1;
-}
-.tituloCard {
-  font-size: 24px;  
-}
-.CardBottom {
-   display: flex;
-   align-items:stretch;
-   justify-content: center;
-}
-.rating {
-  font-family: 'ABeeZee', sans-serif;
 }

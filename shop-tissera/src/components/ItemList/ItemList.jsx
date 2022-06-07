@@ -1,14 +1,22 @@
+// Imports
+
+// - - - React - - -
 import React from "react";
+
+// - - - Custom - - -
 import Item from "../Item/Item";
+
+// - - - CSS Files - - -
 import "./ItemList.css";
-import AOS from 'aos';
 
+// - - - AOS Library - - -
+import AOS from "aos";
 
-
+// Esta funcion mapea los items y a cada uno se le asigna propiedades
 function ItemList({ items }) {
-  
+  // Inicio de AOS library
   AOS.init();
-    return (
+  return (
     <div className="itemList" data-aos="zoom-in">
       {items.map((item) => {
         return (
@@ -21,8 +29,7 @@ function ItemList({ items }) {
             stock={item.dataStock}
             rating={item.rating}
           />
-      );
-        
+        );
       })}
     </div>
   );

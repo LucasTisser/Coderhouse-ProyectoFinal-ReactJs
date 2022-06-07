@@ -1,12 +1,23 @@
+// Imports
+
+// - - - React - - -
 import React, { useEffect, useState } from "react";
+
+// - - - React Router DOM - - -
 import { useParams } from "react-router-dom";
+
+// - - - Firebase - - -
 import { doc, getDoc } from "firebase/firestore";
-import ItemDetail from "../../components/ItemDetail/ItemDetail";
-import "./ItemDetailContainer.css";
 import db from "../../services/firebase";
+
+// - - - Custom - - -
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Spinner from "../../components/Spinner/Spinner";
 
+// - - - CSS Files - - -
+import "./ItemDetailContainer.css";
 
+// Esta funcion muestra los datos obtenidos de ItemListContainer
 function ItemDetailContainer() {
   const [Detail, setItemDetail] = useState([]);
   const [load, setLoad] = useState(false);
@@ -21,7 +32,7 @@ function ItemDetailContainer() {
       setItemDetail(result);
       setLoad(false);
     } catch (error) {
-      console.log("se ha producito otro error en itemdetailContainer" + error);
+      console.log("se ha producido un error en itemDetailContainer" + error);
     }
   };
 
@@ -31,10 +42,7 @@ function ItemDetailContainer() {
 
   return (
     <div className="detailContainerCards">
-      {
-        load ? <Spinner/> : <ItemDetail items={Detail} />
-      }
-      
+      {load ? <Spinner /> : <ItemDetail items={Detail} />}
     </div>
   );
 }

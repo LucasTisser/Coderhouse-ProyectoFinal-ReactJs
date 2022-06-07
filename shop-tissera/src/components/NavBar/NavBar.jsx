@@ -1,11 +1,24 @@
+// Imports
+
+// - - - React - - -
 import React from "react";
+
+// - - - React Router DOM - - -
 import { NavLink } from "react-router-dom";
+
+// - - - Custom - - -
 import CartWidget from "../CartWidget/CartWidget";
+
+// - - - Library React Bootstrap - - -
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+
+// - - - CSS Files - - -
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
 
+// Esta funcion muestra el NavBar, con su logo, las diferentes categorias
+// a las que se puede navegar y la imagen del carrito
 function NavBar() {
   return (
     <div>

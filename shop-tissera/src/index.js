@@ -1,9 +1,21 @@
+// Imports
+
+// - - - React - - -
 import React from "react";
+
+// - - - React Router DOM - - -
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+
+// - - - APP - - -
+import App from "./App";
+
+// - - - CSS Files - - -
+import "./index.css";
+
+// - - - Context Cart - - -
 import { CartContextProvider } from "./store/CartContext";
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -14,7 +26,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

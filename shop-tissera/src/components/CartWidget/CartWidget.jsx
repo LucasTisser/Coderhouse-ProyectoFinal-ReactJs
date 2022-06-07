@@ -1,19 +1,26 @@
-import React, { useContext, useEffect, useState } from "react";
+// Imports
+
+// - - - React - - -
+import React, { useContext } from "react";
+
+// - - - React Router DOM - - -
 import { Link } from "react-router-dom";
+
+// - - - Custom - - -
 import carritoImg from "./carritoCompras.png";
 import Bubble from "../Bubble/Bubble";
-import "./CartWidget.css";
 import CartContext from "../../store/CartContext";
-import Badge from "react-bootstrap/Badge";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+// - - - Library React Bootstrap - - -
+import Badge from "react-bootstrap/Badge";
+
+// - - - CSS Files - - -
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./CartWidget.css";
+
+// Esta funcion muestra la imagen del carrito en el Navbar con la cantidad de productos que lleva el carrito(cartCtx)
 function CartWidget() {
   const cartCtx = useContext(CartContext);
-  const [badgeShow, setBadgeShow] = useState(false);
-  useEffect(() => {
-    cartCtx.getCartQuantity() === 0 ? setBadgeShow(false) : setBadgeShow(true);
-    console.log(badgeShow);
-  }, [cartCtx, badgeShow]);
   return (
     <div>
       <div className="badgeCart">

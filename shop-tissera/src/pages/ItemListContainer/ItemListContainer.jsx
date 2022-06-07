@@ -1,18 +1,27 @@
+// Imports
+
+// - - - React - - -
 import React, { useEffect, useState } from "react";
-import "./ItemListContainer.css";
-import ItemList from "../../components/ItemList/ItemList";
+
+// - - - React Router DOM - - -
 import { useParams } from "react-router-dom";
+
+// - - - Firebase - - -
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../../services/firebase";
+
+// - - - Custom - - -
+import ItemList from "../../components/ItemList/ItemList";
 import Spinner from "../../components/Spinner/Spinner";
 
+// - - - CSS Files - - -
+import "./ItemListContainer.css";
 
+// Esta funcion muestra la totalidad de los items, trae los productos a travez de Firebase
 const ItemListContainer = () => {
   const [items, setItem] = useState([]);
   const [load, setLoad] = useState(false);
   const { categoryId } = useParams();
-
-  
 
   const traerProductos = async (category) => {
     setLoad(true);
@@ -27,39 +36,19 @@ const ItemListContainer = () => {
       setItem(result);
       setLoad(false);
     } catch (error) {
-      console.log("se ha producido un error." + error);
+      console.log("se ha producido un error en ItemListContainer" + error);
     }
   };
   useEffect(() => {
     traerProductos(categoryId);
   }, [categoryId]);
-  
+
   return (
-    <div className="listContainer" >
+    <div className="listContainer">
       <div className="itemsContainer">
-        
-        {
-          load ? <Spinner/> : <ItemList items={items}/>
-        }
+        {load ? <Spinner /> : <ItemList items={items} />}
       </div>
     </div>
   );
 };
 export default ItemListContainer;
-
-// ---- use efect ---
-// const db = getFirestore();
-// const itemCollection = collection(db, 'Items')
-// const q = query(
-//       itemCollection,
-//       where('precio','>', 500),
-//       limit(1)
-//     )
-// return getDocs(q)
-// .then(snapshot => {
-//   console.log(snapshot.docs[0].id)
-//   console.log(snapshot.docs[0].data())
-//   console.log(snapshot.docs.map(doc => {return {...doc.data(), id: doc.id}
-//   }))
-// })
-// .catch(err => console.log(err))

@@ -1,3 +1,6 @@
+// Imports
+
+// - - - React - - -
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
@@ -9,8 +12,13 @@ export const CartContext = createContext({
   getCartQuantity: () => {},
   getTotalPrice: () => {},
 });
+// Esta funcion es el contexto del carrito, con el se puede :
+// Agregar un producto,Eliminar un producto, Limpiar el carrito
+// Ver el precio total de los productos,Consultar si el item esta en el carrito
+// y por ultimo La cantidad de productos del item
 export const CartContextProvider = ({ children }) => {
   const [productsList, setProductsList] = useState([]);
+  // Funcion para agregar productos
   const addProduct = (productToAdd) => {
     const repeatedItemIndex = productsList.findIndex(
       (item) => item.id === productToAdd.id
@@ -23,11 +31,11 @@ export const CartContextProvider = ({ children }) => {
             : p
         )
       );
-      // Agregar una logica de cantidades, aca se agrega el producto cuando ya estaba en el carrito, pero se desea agregar mas cantidad del mismo
     } else {
       setProductsList([productToAdd, ...productsList]);
     }
   };
+  // Funcion para eliminar productos
   const removeProduct = (id) => {
     const indexToRemove = productsList.findIndex((item) => item.id === id);
 
@@ -45,19 +53,21 @@ export const CartContextProvider = ({ children }) => {
       alert("No se encuentra este producto en su carrito");
     }
   };
+  // Funcion para limpiar el carrito
   const clear = () => {
     setProductsList([]);
   };
+  // Funcion para consultar si el item esta en el carrito
   const isInCart = (id) => {
     return productsList.map((p) => p.id).indexOf(id) !== -1;
   };
+  // Funcion para tomar la cantidad de productos
   const getCartQuantity = () => {
     return productsList.reduce((total, value) => {
       return total + value.quantity;
     }, 0);
-    // devuelve la suma de las cantidades de los productos
   };
-
+  // Funcion para tomar el precio total de los productos
   const getTotalPrice = () => {
     return productsList.reduce((total, value) => {
       return total + value.precio * value.quantity;
@@ -80,4 +90,4 @@ export const CartContextProvider = ({ children }) => {
   );
 };
 
-export default CartContext
+export default CartContext;

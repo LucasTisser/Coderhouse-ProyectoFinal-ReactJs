@@ -1,6 +1,10 @@
+// Imports
+
+// - - - Firebase - - -
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// Desde este archivo se inicializa el servicio de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyC6U3wB-kAgr9p8VY2k9uk6J6XNO7LV9jo",
   authDomain: "shop-tissera.firebaseapp.com",
