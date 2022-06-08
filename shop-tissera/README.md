@@ -100,4 +100,11 @@ A traves de `Firebase`, recopila datos y se muestran sobre `ItemDetail` las cara
 
 El **Cart Context** es el contexto del carrito en si, en el se almacenan los productos que se van a comprar, y otras funcionalidades para los usuarios,como por ejemplo poder agregar productos a este contexto, o poder eliminarlos, tambien la opcion de limpiar el carrito por completo, o calcular el precio total de los productos que va a llevar.
 
+## **Librerias**
+
+El proyecto se realizo con ayuda de las siguientes librerias:\
+**React Boostrap** , Web oficial : https://react-bootstrap.github.io/ \
+**Toastify** , Web oficial : https://apvarun.github.io/toastify-js/# \
+**React Spinners**, Web oficial : https://www.davidhu.io/react-spinners/ \
+**AOS**, Web oficial : https://michalsnik.github.io/aos/ \
 _Este proyecto fue realizado con fines de aprendizaje, cualquier modificacion o cambio que mejore el codigo, contactarme a mi perfil._
