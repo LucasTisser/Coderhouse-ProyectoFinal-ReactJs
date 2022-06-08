@@ -68,7 +68,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-<<<<<<< HEAD
 
 # Shop Tissera.
 
@@ -81,30 +80,13 @@ Este sitio web representa un carrito de compras convencional.\
 Cuando este dentro del **carrito**, podra ver los productos que este por comprar, dandole detalles como el valor de cada unidad y la cantidad de unidades que esta llevando. Para finalizar, tendra dos botones debajo de los productos que lleva, uno para poder **limpiar** todo el carrito y otro para **finalizar la compra**.\
  Cuando **Finalize la compra**, se le enviara a un formulario, donde se le requerira que escriba algunos datos de contacto, luego de completar los datos, al clickear **Finalizar Compra** se le asigara una orden, generada automaticamente, con la informacion que ingreso, los productos que compro, y la fecha y hora de compra.
 
-=======
-# Shop Tissera.
-
-  ## Presentacion simple.
-   Este sitio web representa un carrito de compras convencional.\
-   Cuando el usuario ingrese al sitio podra ver un `Navbar` en el lado superior, logrando navegar entre las distintas categorias que se ofrecen, para lograr una mejor visualizacion de los productos que desea ver, luego en el cuerpo de la Home Page podra ver la totalidad de los productos, donde en el se muestran algunas caracteristicas del mismo, como una imagen del producto o el precio que posee.\
-   Cada producto que se muestra, contiene dos **botones**, uno para ver el **detalle** del producto y otro para llevar un producto al carrito.Cuando se clickea en **Ver detalle**, el usuario sera trasladado al detalle del mismo, dandole mas caracteristicas del producto, como una descripcion en detalle de lo que conlleva, o logrando agregar mas de un producto al carrito, siempre y cuando se agregue al menos una unidad.\
-   Al agregar productos usted podra verlos a traves del **carrito de compras**, que se encuentra en el `Navbar` con la imagen del carrito, o desde el detalle de cada item.
-   Cuando este dentro del **carrito**, podra ver los productos que este por comprar, dandole detalles como el valor de cada unidad y la cantidad de unidades que esta llevando. Para finalizar, tendra dos botones debajo de los productos que lleva, uno para poder **limpiar** todo el carrito y otro para **finalizar la compra**.\
-   Cuando **Finalize la compra**, se le enviara a un formulario, donde se le requerira que escriba algunos datos de contacto, luego de completar los datos, al clickear **Finalizar Compra** se le asigara una orden, generada automaticamente, con la informacion que ingreso, los productos que compro, y la fecha y hora de compra.
-   
->>>>>>> 0aab3c93d5646699373b8c83d1085d76584f568b
 ## Componentes inteligentes.
 
 ### `ItemListContainer`
 
 Este componente inteligente se muestra sobre la **Home Page**, Su funcion es mostrar los productos que se ofrecen al usuario.
-<<<<<<< HEAD
 Los datos son tomados de `Firebase` y son cargados a traves de los `Item`, donde cada uno tendra sus propias caracteristicas.
 
-=======
-  Los datos son tomados de `Firebase` y son cargados a traves de los `Item`, donde cada uno tendra sus propias caracteristicas.
-  
->>>>>>> 0aab3c93d5646699373b8c83d1085d76584f568b
 ### `ItemDetailContainer`
 
 `ItemDetailContainer` se visualiza despues de haber clickeado en **Ver Detalle** sobre algun `Item`. Su funcion es dar mas detalle del mismo.
@@ -115,13 +97,7 @@ A traves de `Firebase`, recopila datos y se muestran sobre `ItemDetail` las cara
 `Cart` ofrece al usuario poder ver los productos que lleva para su compra,para luego poder ir al **formulario de compra**. A traves del `CartContext`, este almacenara los productos que haya clickeado y los mostrara en `Cart`, ofreciendo datos como la cantidad de productos que lleva y el valor por unidad.
 
 ## `CartContext`
-<<<<<<< HEAD
 
 El **Cart Context** es el contexto del carrito en si, en el se almacenan los productos que se van a comprar, y otras funcionalidades para los usuarios,como por ejemplo poder agregar productos a este contexto, o poder eliminarlos, tambien la opcion de limpiar el carrito por completo, o calcular el precio total de los productos que va a llevar.
 
 _Este proyecto fue realizado con fines de aprendizaje, cualquier modificacion o cambio que mejore el codigo, contactarme a mi perfil._
-=======
-El **Cart Context** es el contexto del carrito en si, en el se almacenan los productos que se van a comprar, y otras funcionalidades para los usuarios,como por ejemplo poder agregar productos a este contexto, o poder eliminarlos, tambien la opcion de limpiar el carrito por completo, o calcular el precio total de los productos que va a llevar.
-
-*Este proyecto fue realizado con fines de aprendizaje, cualquier modificacion o cambio que mejore el codigo, contactarme a mi perfil.*
->>>>>>> 0aab3c93d5646699373b8c83d1085d76584f568b
