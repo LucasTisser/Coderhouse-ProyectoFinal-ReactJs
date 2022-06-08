@@ -14,9 +14,6 @@ import db from "../../services/firebase";
 import ItemList from "../../components/ItemList/ItemList";
 import Spinner from "../../components/Spinner/Spinner";
 
-// - - - CSS Files - - -
-import "./ItemListContainer.css";
-
 // Esta funcion muestra la totalidad de los items, trae los productos a travez de Firebase
 const ItemListContainer = () => {
   const [items, setItem] = useState([]);
